@@ -1,4 +1,5 @@
 import "./globals.css";
+import type { ReactNode } from "react";
 
 export const metadata = {
   title: "Ashley Chamboko – Principal AI & Cloud Architect",
@@ -6,7 +7,7 @@ export const metadata = {
     "AI Architect specializing in national-scale AI platforms, MLOps, and cloud-native data systems.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="bg-bg text-white font-sans antialiased">
@@ -15,3 +16,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

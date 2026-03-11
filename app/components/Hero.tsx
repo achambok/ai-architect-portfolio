@@ -4,48 +4,46 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 pt-24">
-        
+    <section className="min-h-screen flex items-center justify-center px-6 py-24">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-xs tracking-[0.35em] uppercase text-neutral-500 mb-4">
-            Principal AI & Cloud Architect
-          </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-xs font-medium text-gray-300 tracking-wide">Available for opportunities</span>
+          </div>
 
-          <h1 className="text-5xl md:text-6xl font-semibold leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
             Designing national-scale{" "}
-            <span className="text-neon">AI platforms</span> and cloud-native
-            data systems.
+            <span className="text-gradient">AI platforms</span> and cloud-native data systems.
           </h1>
 
-          <p className="mt-6 text-neutral-400 max-w-xl">
-            15+ years building AI/ML platforms, MLOps systems, and edge
-            inference architectures across healthcare, fintech, government,
-            and emerging tech.
+          <p className="text-lg text-gray-400 max-w-xl mb-8 leading-relaxed">
+            15+ years building AI/ML platforms, MLOps systems, and edge inference architectures across healthcare, fintech, government, and emerging tech.
           </p>
 
-          <div className="mt-8 flex gap-4 flex-wrap">
+          <div className="flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="px-6 py-2 rounded-full border border-neon text-neon bg-neon/10 hover:bg-neon hover:text-black transition shadow-neon"
+              className="group relative px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-black font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
             >
               View My Work
+              <span className="absolute inset-0 rounded-full ring-2 ring-white/20 group-hover:ring-white/40 transition-all" />
             </a>
 
             <a
               href="/Ashley_Chamboko_CV.pdf"
-              className="px-6 py-2 rounded-full border border-white/20 hover:border-neon hover:text-neon transition"
+              className="px-8 py-3 rounded-full glass-card text-white font-medium hover:bg-white/10 transition-all"
             >
               Download CV
             </a>
 
             <a
               href="#contact"
-              className="px-6 py-2 rounded-full border border-white/10 hover:border-neon/60 hover:text-neon transition"
+              className="px-8 py-3 rounded-full glass-card text-white font-medium hover:bg-white/10 transition-all"
             >
               Contact Me
             </a>
@@ -53,19 +51,26 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          className="flex justify-center"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="relative"
         >
-          <div className="h-72 w-72 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-[0_0_80px_rgba(195,252,63,0.25)] relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(195,252,63,0.25),_transparent_60%)]" />
-            <div className="absolute inset-0 flex items-center justify-center text-xs text-neutral-400">
-              Profile Photo Placeholder
+          <div className="aspect-square rounded-3xl glass-card neon-glow relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-emerald-500/20 to-transparent" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-cyan-400 to-emerald-400 flex items-center justify-center mb-4">
+                  <span className="text-4xl">👨‍💻</span>
+                </div>
+                <p className="text-sm text-gray-400">Profile Photo</p>
+              </div>
             </div>
+            <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-cyan-400/30 to-emerald-400/30 rounded-full blur-3xl" />
           </div>
         </motion.div>
       </div>
     </section>
   );
 }
+
